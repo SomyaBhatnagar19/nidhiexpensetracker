@@ -1,3 +1,5 @@
+/* /controllers/resetPasswordController.js */
+
 const path = require("path");
 const User = require("../models/userModel");
 const ResetPassword = require("../models/resetPasswordModel");
@@ -43,11 +45,11 @@ exports.sendMail = async (req, res, next) => {
 
     const client = Sib.ApiClient.instance;
     const apiKey = client.authentications["api-key"];
-    apiKey.apiKey = process.env.RESET_PASSWORD_API_KEY;
+    apiKey.apiKey = "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";
     const transEmailApi = new Sib.TransactionalEmailsApi();
     const sender = {
-      email: "nidhijagga11@gmail.com",
-      name: "Nidhi",
+      email: "somya.bhanagar@yahoo.com",
+      name: "Spendzi",
     };
     const receivers = [
       {

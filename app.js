@@ -1,3 +1,5 @@
+/* app.js */
+require('dotenv').config();
 const express = require("express");
 const app = express();
 
@@ -10,6 +12,9 @@ app.use(cors());
 
 const dotenv = require("dotenv");
 dotenv.config();
+
+// // Load environment variables
+// require('dotenv').config();
 
 const accessLogStream = fs.createWriteStream(
   path.join(__dirname, "access.log"),

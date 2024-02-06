@@ -1,3 +1,5 @@
+/* /controllers/purchaseMembershipController.js */
+
 const Razorpay = require("razorpay");
 const Order = require("../models/ordersModel");
 const userController = require("./userController");
@@ -5,8 +7,8 @@ const userController = require("./userController");
 exports.purchasePremium = async (req, res) => {
   try {
     var rzp = new Razorpay({
-      key_id: process.env.RAZORPAY_KEY_ID,
-      key_secret: process.env.RAZORPAY_KEY_SECRET,
+      key_id: "rzp_test_irRWRJ6Q13otVr",
+      key_secret: "VnpWyQObIW2pMqShoxg4DQll",
     });
     const amount = 50000;
     rzp.orders.create({ amount, currency: "INR" }, (err, order) => {
@@ -52,6 +54,6 @@ exports.updateTransactionStatus = async (req, res) => {
       });
   } catch (err) {
     console.log(err);
-    res.status(403).json({ error: err, message: "Sometghing went wrong" });
+    res.status(403).json({ error: err, message: "Something went wrong" });
   }
 };

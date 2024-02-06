@@ -1,10 +1,12 @@
+/* /middleware/auth.js */
+
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
 
 const authenticate = (req, res, next) => {
   try {
     const token = req.header("Authorization");
-    const user = jwt.verify(token, process.env.TOKEN);
+    const user = jwt.verify(token, "1937683932020310230484786355");
     User.findByPk(user.userId).then((user) => {
       req.user = user;
       next();
